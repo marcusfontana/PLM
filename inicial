@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portal Linguístico Missioneiro</title>
+  <style>
+    /* Estilos para o mapa */
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="tabs">
+    <ul>
+      <li><a href="#aba1">Aba 1</a></li>
+      <li><a href="#aba2">Aba 2</a></li>
+      <li><a href="#aba3">Aba 3</a></li>
+    </ul>
+    <div id="aba1">
+      <h1>Portal Linguístico Missioneiro</h1>
+    </div>
+    <div id="aba2">
+      <h1>Mapa do Rio Grande do Sul</h1>
+      <div id="map"></div>
+    </div>
+    <div id="aba3">
+      <h1>Equipe</h1>
+      <p>Professores Marcus V. L. Fontana e Angelise Fagundes</p>
+      <p>
+        <a href="link_para_curriculo_lattes_professor1" target="_blank">Curriculum Lattes Marcus V. L. Fontana</a>
+        <br>
+        <a href="link_para_curriculo_lattes_professor2" target="_blank">Curriculum Lattes Angelise Fagundes</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Função para inicializar o mapa
+    function initMap() {
+      // Configurar as opções do mapa
+      var mapOptions = {
+        center: { lat: -30.0000, lng: -54.0000 }, // Coordenadas do centro do mapa
+        zoom: 6 // Zoom inicial do mapa
+      };
+      // Criar o mapa
+      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      
+      // Adicionar a camada de polígono para a RF7
+      var rf7Coords = [
+        // Coordenadas dos pontos que formam a região
+        // Substitua estas coordenadas pelas coordenadas reais da RF7
+        { lat: -28.0000, lng: -55.0000 },
+        { lat: -29.0000, lng: -56.0000 },
+        { lat: -30.0000, lng: -55.0000 },
+        { lat: -29.0000, lng: -54.0000 }
+      ];
+      var rf7Polygon = new google.maps.Polygon({
+        paths: rf7Coords,
+        strokeColor: '#000000', // Cor da borda
+        strokeOpacity: 0.8, // Opacidade da borda
+        strokeWeight: 2, // Espessura da borda
+        fillColor: '#FF0000', // Cor de preenchimento
+        fillOpacity: 0.35, // Opacidade do preenchimento
+        clickable: true // Permite clicar na região
+      });
+      rf7Polygon.setMap(map);
+      
+// Adicionar evento de clique na RF7
+rf7Polygon.addListener('click', function() {
+  // Substituir o código abaixo para mostrar o mapa ampliado da RF7
+  // Exemplo de código para mostrar o mapa ampliado da RF7
+  // Limpar mapa anterior
+  map.data.forEach(function(feature) {
+    map.data.remove(feature);
+  });
+
+  // Carregar dados do mapa da RF7
+  map.data.loadGeoJson('caminho/para/o/arquivo/geojson/rf7.geojson', { idPropertyName: 'nome_da_propriedade_id' });
+
+  // Definir estilo para as regiões funcionais de planejamento
+  map.data.setStyle(function(feature) {
+    var id = feature.getProperty('nome_da_propriedade_id');
+    // Definir estilo para a RF7, que será clicável
+    if (id === 'RF7') {
+      return {
+        fillColor: 'cor_da_rf7',
+        fillOpacity: 0.7,
+        strokeColor: 'cor_da_borda',
+        strokeWeight: 1
+      };
+    } else {
+      // Definir estilo para as outras regiões, que serão estáticas
+      return {
+        fillColor: 'cor_das_outras_rfs',
+        fillOpacity: 0.7,
+        strokeColor: 'cor_da_borda',
+        strokeWeight: 1,
+        clickable: false
+      };
+    }
+  });
+
+  // Adicionar evento de clique nas cidades da RF7
+  map.data.addListener('click', function(event) {
+    // Substituir o código abaixo para exibir a janela pop-up com os dados da cidade
+    var cidade = event.feature.getProperty('nome_da_propriedade_cidade');
+    var dadosCenso = event.feature.getProperty('nome_da_propriedade_dados_censo');
+    alert('Cidade: ' + cidade + '\nDados do Censo: ' + dadosCenso);
+  });
+});
