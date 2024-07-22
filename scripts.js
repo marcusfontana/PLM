@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lista de municípios com coordenadas e nomes
     var municipios = [
         { name: "Cerro Largo", coords: [-28.146, -54.738] },
-        { name: "São Borja", coords: [-28.660, -56.005] },
         { name: "Santo Ângelo", coords: [-28.298, -54.263] },
         { name: "São Luiz Gonzaga", coords: [-28.408, -54.956] },
         { name: "São Miguel das Missões", coords: [-28.553, -54.556] },
