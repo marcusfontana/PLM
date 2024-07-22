@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lista de municípios com coordenadas e nomes
     var municipios = [
+        { name: "Bossoroca", coords: [-28º43’48”, -54°54’00”] },
         { name: "Cerro Largo", coords: [-28.146, -54.738] },
         { name: "São Borja", coords: [-28.660, -56.005] },
         { name: "Santo Ângelo", coords: [-28.298, -54.263] },
