@@ -1,26 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Define a posição do mapa, centralizando em Cerro Largo
-    var map = L.map('map').setView([-28.4643, -54.9936], 13);
+    var map = L.map('map').setView([-28.3881, -54.9527], 8);
 
-    // Adiciona a camada de tiles do OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Adiciona um marcador na cidade de Cerro Largo
-    var marker = L.marker([-28.4643, -54.9936]).addTo(map)
-        .bindPopup('Cerro Largo, RS, Brasil.<br> Conhecida por sua cultura e tradições.')
-        .openPopup();
+    // Lista de municípios com coordenadas (exemplo com alguns municípios)
+    var municipios = [
+        { name: "Cerro Largo", coords: [-28.1481, -54.7464] },
+        { name: "Santo Ângelo", coords: [-28.3001, -54.2668] },
+        { name: "São Borja", coords: [-28.6600, -56.0035] },
+        // Adicione os outros municípios aqui
+    ];
+
+    municipios.forEach(municipio => {
+        var marker = L.marker(municipio.coords).addTo(map)
+            .bindPopup(`<b>${municipio.name}</b><br><button onclick="showMenu('${municipio.name}')">Explore</button>`);
+    });
 });
 
-marker.on('click', function() {
-    document.getElementById('content').innerHTML = `
-        <h2>Localização 1</h2>
-        <p>Descrição do local.</p>
-        <img src="path/to/image.jpg" alt="Imagem do Local" />
-        <audio controls>
-            <source src="path/to/audio.mp3" type="audio/mpeg">
-            Seu navegador não suporta o elemento de áudio.
-        </audio>
-    `;
-});
+function showMenu(municipioName)
