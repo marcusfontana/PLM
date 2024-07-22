@@ -1,29 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var map = L.map('map').setView([-28.3881, -54.9527], 8);
+    // Define a posição do mapa, centralizando em Cerro Largo
+    var map = L.map('map').setView([-28.4643, -54.9936], 13);
 
+    // Adiciona a camada de tiles do OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Coordenadas dos vértices do polígono que delimita a região das Missões
-    var missoesCoords = [
-        [-28.3500, -55.0000],
-        [-28.3500, -54.9000],
-        [-28.4000, -54.9000],
-        [-28.4000, -55.0000]
-    ];
-
-    // Adiciona o polígono ao mapa
-    var missoesPolygon = L.polygon(missoesCoords, {
-        color: 'red',
-        fillColor: 'rgba(255, 0, 0, 0.3)',
-        fillOpacity: 0.5,
-        weight: 2
-    }).addTo(map);
-
-    // Adiciona um marcador nas coordenadas da região das Missões
-    var marker = L.marker([-28.3881, -54.9527]).addTo(map)
-        .bindPopup('Região das Missões, Brasil.<br> Conhecida por sua rica história e cultura.')
+    // Adiciona um marcador na cidade de Cerro Largo
+    var marker = L.marker([-28.4643, -54.9936]).addTo(map)
+        .bindPopup('Cerro Largo, RS, Brasil.<br> Conhecida por sua cultura e tradições.')
         .openPopup();
 });
 
