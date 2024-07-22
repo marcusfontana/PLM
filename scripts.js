@@ -9,3 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
         .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
         .openPopup();
 });
+marker.on('click', function() {
+    document.getElementById('content').innerHTML = `
+        <h2>Localização 1</h2>
+        <p>Descrição do local.</p>
+        <img src="path/to/image.jpg" alt="Imagem do Local" />
+        <audio controls>
+            <source src="path/to/audio.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    `;
+});
