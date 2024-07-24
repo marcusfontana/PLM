@@ -14,8 +14,9 @@ header {
 }
 
 header nav {
-    margin-top: 20px; /* Espaço entre o header e o menu */
+    padding-top: 20px; /* Espaço interno acima do menu */
 }
+
 header img.logo-principal {
     display: block;
     margin: 0 auto;
