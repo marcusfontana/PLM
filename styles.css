@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 1;
+    padding: 1;
     background-color: #f4f4f4;
 }
 
@@ -15,7 +15,7 @@ header {
 header img.logo-principal {
     display: block;
     margin: 0 auto;
-    width: 150px;
+    width: 300px;
     height: auto;
 }
 
@@ -41,7 +41,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    background-color: #555;
+    background-color: #e1e1e0;
 }
 
 main {
@@ -76,7 +76,7 @@ main {
 
 footer {
     background-color: #ffffff;
-    color: white;
+    color: black;
     text-align: center;
     padding: 10px 0;
     position: fixed;
