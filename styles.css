@@ -13,6 +13,9 @@ header {
     text-align: center;
 }
 
+header nav {
+    margin-top: 20px; /* Espaço entre o header e o menu */
+}
 header img.logo-principal {
     display: block;
     margin: 0 auto;
