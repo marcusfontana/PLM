@@ -64,4 +64,13 @@ function openTab(evt, tabName) {
     }
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace("
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function showContent(municipio, tipo) {
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = `<h3>${municipio} - ${tipo}</h3><p>Conteúdo relacionado a ${tipo} em ${municipio}.</p>`;
+}
