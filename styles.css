@@ -83,6 +83,8 @@ footer {
     background-color: #ffffff;
     color: black;
     text-align: center;
+    font-size: 0.8em; /* Diminuir a fonte para 80% do tamanho padrão */
+    color: #666; /* Cor mais discreta */
     padding: 10px 0;
     position: fixed;
     bottom: 0;
@@ -90,7 +92,7 @@ footer {
 }
 
 footer img.logo-polifonia {
-    width: 50px;
+    width: 100px;
     height: auto;
 }
 
