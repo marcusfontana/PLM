@@ -5,50 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Linguístico Missioneiro</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
-   <div class="header">
-    <h1>Portal Linguístico Missioneiro</h1>
-    <div class="logos">
-        <img src="logo_principal.png" alt="Logo do Projeto" class="logo-principal">
-        <img src="logo_polifonia.png" alt="Logo do Grupo de Pesquisa" class="logo-polifonia">
-    </div>
-</div>
-
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Apresentacao')">Apresentação</button>
-        <button class="tablinks" onclick="openTab(event, 'Mapas')">Mapas</button>
-        <button class="tablinks" onclick="openTab(event, 'Equipe')">Equipe</button>
-    </div>
-
-    <div id="Apresentacao" class="tabcontent">
-        <h2>Apresentação do Projeto</h2>
-        <p>Texto explicativo do projeto...</p>
-    </div>
-
-    <div id="Mapas" class="tabcontent">
-        <h2>Mapas</h2>
-        <div id="map"></div>
-        <div id="content" style="padding: 20px;"></div>
-    </div>
-
-    <div id="Equipe" class="tabcontent">
-        <h2>Equipe</h2>
-        <div class="equipe-member">
-            <img src="foto_participante1.jpg" alt="Foto Participante 1">
-            <p>Nome: Participante 1</p>
-            <p>Currículo: Descrição...</p>
-        </div>
-        <div class="equipe-member">
-            <img src="foto_participante2.jpg" alt="Foto Participante 2">
-            <p>Nome: Participante 2</p>
-            <p>Currículo: Descrição...</p>
-        </div>
-        <!-- Adicione mais membros da equipe conforme necessário -->
-    </div>
-
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="scripts.js"></script>
+    <header>
+        <h1>Portal Linguístico Missioneiro</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Apresentação</a></li>
+                <li><a href="mapas.html">Mapas</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="presentation">
+            <h2>Apresentação do Projeto</h2>
+            <p>Texto explicativo do projeto...</p>
+            <div class="logos">
+                <img src="logo_principal.png" alt="Logo do Projeto" class="logo-principal">
+                <img src="logo_polifonia.png" alt="Logo do Grupo de Pesquisa" class="logo-polifonia">
+            </div>
+        </section>
+    </main>
 </body>
 </html>
