@@ -14,7 +14,7 @@ header {
 
 header img.logo-principal {
     display: block;
-    margin: 10;
+    margin: 10 auto;
     width: 300px;
     height: auto;
 }
