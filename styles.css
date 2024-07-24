@@ -14,14 +14,14 @@ header {
 
 header img.logo-principal {
     display: block;
-    margin: 0 auto;
+    margin: 10;
     width: 300px;
     height: auto;
 }
 
 nav ul {
     list-style: none;
-    padding: 10;
+    padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
