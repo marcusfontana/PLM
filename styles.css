@@ -9,12 +9,13 @@ header {
     background-color: #ffffff;
     color: black;
     padding: 10px 0;
+    margin: 10;
     text-align: center;
 }
 
 header img.logo-principal {
     display: block;
-    margin: 10 auto;
+    margin: 0 auto;
     width: 300px;
     height: auto;
 }
